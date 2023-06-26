@@ -142,7 +142,7 @@ func generateRepoConfig(configDest, configSource string) ([]string, error) {
 		if err != nil {
 			return nil, err
 		}
-		files = append(files, f)
+		files = append(files, strings.Replace(f, `\\`, `/`, -1))
 	}
 
 	return files, nil
